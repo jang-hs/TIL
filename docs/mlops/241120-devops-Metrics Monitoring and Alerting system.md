@@ -144,6 +144,7 @@ SQL 스타일 쿼리 예제:
 2. 경고 관리자(Alert Manager): 규칙을 주기적으로 실행하며 이상이 감지되면 이벤트를 큐(Queue)에 게시해 고객에게 알립니다.
 3. 경고 소비자(Alert Consumer): 큐에서 이벤트를 수신하고, 사용 가능한 통신 채널을 통해 수신자에게 전달합니다.
 4. 통신 채널(Communication Channel): 이메일, 문자 메시지, PageDuety, Webhooks 등이 포함됩니다.  
+  
 ## 시각화 시스템(Visualization System)
 ![](https://miro.medium.com/v2/resize:fit:1400/1*go-QROkYRof621_Jux7ZcA.png)
 
@@ -151,7 +152,7 @@ SQL 스타일 쿼리 예제:
 1. 특정 메트릭 데이터를 로드합니다.
 2. 시간 범위 및 사용자 정의 태그를 기준으로 필터링합니다.
 3. 메트릭 데이터를 그래프로 시각화합니다.
-
+  
 ## Reference
 
 제안된 시스템 설계는 Google의 Monarch 시계열 데이터베이스를 기반으로 합니다. 메트릭 및 경고 시스템에 대해 더 깊이 이해하고 싶다면 다음 논문을 참고하세요. [Monarch: Google’s Planet-Scale In-Memory](https://www.vldb.org/pvldb/vol13/p3181-adams.pdf)
