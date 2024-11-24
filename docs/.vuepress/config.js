@@ -33,7 +33,8 @@ module.exports = {
         HomeFilelist.push(file);
       }
     });
-    sidebarArr.unshift(makeSidebarObject("", HomeFilelist));
+    // sidebarArr.unshift(makeSidebarObject("", HomeFilelist));
+    sidebarArr.unshift('/')
     return sidebarArr;
   }
   function makeSidebarObject(folder, mdfileList) {
