@@ -1,5 +1,6 @@
 # Monthly I Learned
 ## 2024. 11
+- [Spark 조인(join) 최적화](https://jang-hs.github.io/TIL/data-engineer/241126-spark-join.html)
 - [Kubernetes의 Probe 알아보기](https://jang-hs.github.io/TIL/mlops/241125-devops-k8s-probe.html)
 - [도커 멀티스테이징](https://jang-hs.github.io/TIL/mlops/241124-docker-multistage.html)
 - [Apache Spark RDD(Resilient Distributed Dataset)](https://jang-hs.github.io/TIL/data-engineer/241122-spark-rdd.html)
