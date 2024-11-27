@@ -1,5 +1,6 @@
 # Monthly I Learned
 ## 2024. 11
+- [Kubernetes HPA (Horizontal Pod Autoscaler) 알아보기](https://jang-hs.github.io/TIL/mlops/241127-devops-k8s-hpa.html)
 - [Spark 조인(join) 최적화](https://jang-hs.github.io/TIL/data-engineer/241126-spark-join.html)
 - [Kubernetes의 Probe 알아보기](https://jang-hs.github.io/TIL/mlops/241125-devops-k8s-probe.html)
 - [도커 멀티스테이징](https://jang-hs.github.io/TIL/mlops/241124-docker-multistage.html)
