@@ -1,5 +1,8 @@
 # Monthly I Learned
+## 2024. 12
+- [SparkSession과 SparkContext 이해하기](https://jang-hs.github.io/TIL/data-engineer/241204-spark-session-context.html)
 ## 2024. 11
+- [예제로 살펴보는 AI를 위한 데이터 엔지니어링](https://jang-hs.github.io/TIL/data-engineer/241130-data-engnierring-for-ai-example.html)
 - [Kubernetes HPA (Horizontal Pod Autoscaler) 알아보기](https://jang-hs.github.io/TIL/mlops/241127-devops-k8s-hpa.html)
 - [Spark 조인(join) 최적화](https://jang-hs.github.io/TIL/data-engineer/241126-spark-join.html)
 - [Kubernetes의 Probe 알아보기](https://jang-hs.github.io/TIL/mlops/241125-devops-k8s-probe.html)
