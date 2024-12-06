@@ -1,5 +1,6 @@
 # Monthly I Learned
 ## 2024. 12
+- [PySpark 프로덕션 환경에서 OutOfMemory(OOM) 문제 해결하기](https://jang-hs.github.io/TIL/data-engineer/241206-spark-oom.html)
 - [SparkSession과 SparkContext 이해하기](https://jang-hs.github.io/TIL/data-engineer/241204-spark-session-context.html)
 ## 2024. 11
 - [예제로 살펴보는 AI를 위한 데이터 엔지니어링](https://jang-hs.github.io/TIL/data-engineer/241130-data-engnierring-for-ai-example.html)
