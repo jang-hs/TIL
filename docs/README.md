@@ -1,5 +1,6 @@
 # Monthly I Learned
 ## 2024. 12
+- [Python: Parallelism(병렬처리) Vs Concurrency(동시성) Vs Threading(스레딩)](https://jang-hs.github.io/TIL/data-engineer/241212-parallel-concurr-thread.html)
 - [PySpark 프로덕션 환경에서 OutOfMemory(OOM) 문제 해결하기](https://jang-hs.github.io/TIL/data-engineer/241206-spark-oom.html)
 - [SparkSession과 SparkContext 이해하기](https://jang-hs.github.io/TIL/data-engineer/241204-spark-session-context.html)
 ## 2024. 11
