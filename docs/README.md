@@ -1,5 +1,7 @@
 # Monthly I Learned
 ## 2025. 04
+- [[k8s hard way] 02-Jumpbox 설정](https://jang-hs.github.io/TIL/mlops/250415-k8s-hard-way-02.html)
+## 2024. 12
 - [[k8s hard way] 01-prerequisites 실습](https://jang-hs.github.io/TIL/mlops/250414-k8s-hard-way-01.html)
 ## 2024. 12
 - [SparkSession과 SparkContext 이해하기](https://jang-hs.github.io/TIL/data-engineer/241204-spark-session-context.html)
