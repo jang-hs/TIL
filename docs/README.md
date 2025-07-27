@@ -1,6 +1,8 @@
 # Monthly I Learned
 ## 2025. 07
-- [Gateway API와 HTTPRoute – Kubernetes 트래픽 관리의 새로운 지평](https://jang-hs.github.io/TIL/mlops/250725-gateway-httproute.html)
+- [Kubernetes NetworkPolicy](https://jang-hs.github.io/TIL/mlops/250727-network-policy.html)
+- [LimitRange와 ResourceQuota](https://jang-hs.github.io/TIL/mlops/250727-quota-limits.html)
+- [Gateway API와 HTTPRoute](https://jang-hs.github.io/TIL/mlops/250725-gateway-httproute.html)
 ## 2025. 04
 - [[k8s hard way] 02-Jumpbox 설정](https://jang-hs.github.io/TIL/mlops/250415-k8s-hard-way-02.html)
 ## 2024. 12

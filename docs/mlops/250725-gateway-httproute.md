@@ -1,4 +1,4 @@
-# Gateway API와 HTTPRoute – Kubernetes 트래픽 관리의 새로운 지평
+# Gateway API와 HTTPRoute
 
 Kubernetes에서 외부 트래픽을 내부 서비스로 연결할 때 가장 많이 사용되는 리소스는 Ingress입니다. Ingress는 간단하고 직관적인 설정 덕분에 초창기 Kubernetes 사용자들에게 필수 도구로 자리잡았습니다. 하지만 대규모 마이크로서비스 환경이나 다중 팀 협업 체계에서는 세밀한 트래픽 제어, 보안 관리, 확장성 등의 요구를 만족시키기 어려워졌습니다. 이를 해결하기 위해 Kubernetes SIG-Network에서 개발한 Gateway API가 등장했습니다.
 
