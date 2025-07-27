@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>[k8s hard way] 01-prerequisites 실습 | Today I Learned</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    
+    <meta name="description" content="desc">
+    
+    <link rel="preload" href="/TIL/assets/css/0.styles.00bd70e4.css" as="style"><link rel="preload" href="/TIL/assets/js/app.dba3423c.js" as="script"><link rel="preload" href="/TIL/assets/js/2.83a6f128.js" as="script"><link rel="preload" href="/TIL/assets/js/1.322c5a0a.js" as="script"><link rel="preload" href="/TIL/assets/js/37.eb0597c0.js" as="script"><link rel="prefetch" href="/TIL/assets/js/10.d9e4b84a.js"><link rel="prefetch" href="/TIL/assets/js/11.ccf2f442.js"><link rel="prefetch" href="/TIL/assets/js/12.7e65a11a.js"><link rel="prefetch" href="/TIL/assets/js/13.d4317b93.js"><link rel="prefetch" href="/TIL/assets/js/14.ea01d868.js"><link rel="prefetch" href="/TIL/assets/js/15.9da1bcf8.js"><link rel="prefetch" href="/TIL/assets/js/16.8727279f.js"><link rel="prefetch" href="/TIL/assets/js/17.fa7fb6b0.js"><link rel="prefetch" href="/TIL/assets/js/18.56419c05.js"><link rel="prefetch" href="/TIL/assets/js/19.42d46c09.js"><link rel="prefetch" href="/TIL/assets/js/20.100d0125.js"><link rel="prefetch" href="/TIL/assets/js/21.428690a9.js"><link rel="prefetch" href="/TIL/assets/js/22.53eda83e.js"><link rel="prefetch" href="/TIL/assets/js/23.377a507c.js"><link rel="prefetch" href="/TIL/assets/js/24.62a43f53.js"><link rel="prefetch" href="/TIL/assets/js/25.2cb61fbc.js"><link rel="prefetch" href="/TIL/assets/js/26.07decc26.js"><link rel="prefetch" href="/TIL/assets/js/27.51b2d4dd.js"><link rel="prefetch" href="/TIL/assets/js/28.86b66102.js"><link rel="prefetch" href="/TIL/assets/js/29.f2c2a0c0.js"><link rel="prefetch" href="/TIL/assets/js/3.e6df855e.js"><link rel="prefetch" href="/TIL/assets/js/30.33147ece.js"><link rel="prefetch" href="/TIL/assets/js/31.4cd27359.js"><link rel="prefetch" href="/TIL/assets/js/32.a6842c91.js"><link rel="prefetch" href="/TIL/assets/js/33.431c1871.js"><link rel="prefetch" href="/TIL/assets/js/34.53302144.js"><link rel="prefetch" href="/TIL/assets/js/35.d500be46.js"><link rel="prefetch" href="/TIL/assets/js/36.f4e6eb9f.js"><link rel="prefetch" href="/TIL/assets/js/38.bcaf4fbf.js"><link rel="prefetch" href="/TIL/assets/js/39.c64a3043.js"><link rel="prefetch" href="/TIL/assets/js/4.cd02f05a.js"><link rel="prefetch" href="/TIL/assets/js/40.c4adbd8b.js"><link rel="prefetch" href="/TIL/assets/js/41.417973c2.js"><link rel="prefetch" href="/TIL/assets/js/42.c0d1a1f0.js"><link rel="prefetch" href="/TIL/assets/js/5.610977c8.js"><link rel="prefetch" href="/TIL/assets/js/6.b548e5bb.js"><link rel="prefetch" href="/TIL/assets/js/7.08600db3.js"><link rel="prefetch" href="/TIL/assets/js/vendors~docsearch.ef62c33d.js">
+    <link rel="stylesheet" href="/TIL/assets/css/0.styles.00bd70e4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/TIL/" class="home-link router-link-active"><!----> <span class="site-name">Today I Learned</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://github.com/jang-hs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://github.com/jang-hs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/TIL/" aria-current="page" class="sidebar-link">Monthly I Learned</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>algorithm</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>data-engineer</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>design-pattern</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>mlops</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/TIL/mlops/241109-mlops-data-testing.html" class="sidebar-link">MLOps 01: Data testing, why, what and how</a></li><li><a href="/TIL/mlops/241110-mlops-dagstar.html" class="sidebar-link">MLOps 02: Dagster — Seamless Data Pipelines &amp; ML Model Management for Machine Learning Engineers</a></li><li><a href="/TIL/mlops/241111-mlops-featurestore.html" class="sidebar-link">MLOps 03: Feast Feature Store — An In-depth Overview Experimentation and Application in Tabular data</a></li><li><a href="/TIL/mlops/241120-devops-metric-monitoring-alert.html" class="sidebar-link">Metrics Monitoring and Alerting system</a></li><li><a href="/TIL/mlops/241124-docker-multistage.html" class="sidebar-link">도커 멀티스테이징</a></li><li><a href="/TIL/mlops/241125-devops-k8s-probe.html" class="sidebar-link">Kubernetes의 Probe 알아보기</a></li><li><a href="/TIL/mlops/241127-devops-k8s-hpa.html" class="sidebar-link">Kubernetes HPA (Horizontal Pod Autoscaler) 알아보기</a></li><li><a href="/TIL/mlops/250414-k8s-hard-way-01.html" aria-current="page" class="active sidebar-link">[k8s hard way] 01-prerequisites 실습</a></li><li><a href="/TIL/mlops/250415-k8s-hard-way-02.html" class="sidebar-link">[k8s hard way] 02-Jumpbox 설정</a></li><li><a href="/TIL/mlops/250725-gateway-httproute.html" class="sidebar-link">Gateway API와 HTTPRoute</a></li><li><a href="/TIL/mlops/250727-network-policy.html" class="sidebar-link">Kubernetes NetworkPolicy</a></li><li><a href="/TIL/mlops/250727-quota-limits.html" class="sidebar-link">LimitRange와 ResourceQuota</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>sql</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="k8s-hard-way-01-prerequisites-실습"><a href="#k8s-hard-way-01-prerequisites-실습" class="header-anchor">#</a> [k8s hard way] 01-prerequisites 실습</h1> <p><a href="https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/master/docs/01-prerequisites.md" target="_blank" rel="noopener noreferrer">01-prerequisites <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>실행환경 - M3 Pro mac + vmware fusion</p> <p>패키지 설치</p> <div class="language-bash extra-class"><pre class="language-bash"><code>brew tap hashicorp/tap
+brew <span class="token function">install</span> hashicorp/tap/hashicorp-vagrant
+
+vagrant plugin <span class="token function">install</span> vagrant-vmware-desktop
+
+</code></pre></div><p>Vagrantfile</p> <div class="language-Vagrantfile extra-class"><pre class="language-text"><code>Vagrant.configure(&quot;2&quot;) do |config|
+  config.vm.box = &quot;bento/debian-12&quot;
+  config.vm.box_check_update = false
+
+  nodes = {
+    &quot;jumpbox&quot; =&gt; { memory: 512, cpus: 1 },
+    &quot;server&quot;  =&gt; { memory: 2048, cpus: 1 },
+    &quot;node-0&quot;  =&gt; { memory: 2048, cpus: 1 },
+    &quot;node-1&quot;  =&gt; { memory: 2048, cpus: 1 }
+  }
+
+  nodes.each do |name, opts|
+    config.vm.define name do |vm|
+      vm.vm.hostname = name
+      vm.vm.network &quot;public_network&quot;, bridge: &quot;en0: Wi-Fi (Wireless)&quot;
+
+      vm.vm.provider :vmware_fusion do |fusion|
+        fusion.memory = opts[:memory]
+        fusion.cpus = opts[:cpus]
+      end
+
+      vm.vm.provision &quot;shell&quot;, inline: &lt;&lt;-SHELL
+        echo &quot;nameserver 8.8.8.8&quot; &gt; /etc/resolv.conf
+        apt update -y
+        apt install -y curl
+      SHELL
+    end
+  end
+end
+
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 실행</span>
+vagrant up
+<span class="token comment"># 접속</span>
+vagrant <span class="token function">ssh</span> jumpbox
+vagrant <span class="token function">ssh</span> server
+vagrant <span class="token function">ssh</span> node-0
+vagrant <span class="token function">ssh</span> node-1
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/TIL/mlops/241127-devops-k8s-hpa.html" class="prev">
+        Kubernetes HPA (Horizontal Pod Autoscaler) 알아보기
+      </a></span> <span class="next"><a href="/TIL/mlops/250415-k8s-hard-way-02.html">
+        [k8s hard way] 02-Jumpbox 설정
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/TIL/assets/js/app.dba3423c.js" defer></script><script src="/TIL/assets/js/2.83a6f128.js" defer></script><script src="/TIL/assets/js/1.322c5a0a.js" defer></script><script src="/TIL/assets/js/37.eb0597c0.js" defer></script>
+  </body>
+</html>
